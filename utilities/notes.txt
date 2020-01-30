@@ -1,0 +1,4 @@
+
+http://stackoverflow.com/questions/26182068/typerror-got-multiple-values-for-argument-after-applying-functools-partial
+http://stackoverflow.com/questions/24755463/functools-partial-wants-to-use-a-positional-argument-as-a-keyword-argument
+http://stackoverflow.com/questions/15331726/how-does-the-functools-partial-work-in-python

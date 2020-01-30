@@ -1,0 +1,38 @@
+
+
+OpenCV 3.0 installation
+http://www.pyimagesearch.com/2015/07/20/install-opencv-3-0-and-python-3-4-on-ubuntu/
+
+OpenCV 3.0 documentation
+http://docs.opencv.org/3.0-beta/modules/videoio/doc/reading_and_writing_video.html
+http://www.fourcc.org/codecs.php
+http://docs.opencv.org/master/dd/d43/tutorial_py_video_display.html#gsc.tab=0
+
+Imaging processing with Numpy and OpenCV
+http://stackoverflow.com/questions/7589012/combining-two-images-with-opencv
+http://stackoverflow.com/questions/15589517/how-to-crop-an-image-in-opencv-using-python
+
+-----------------------------------------------------------------------------------
+preview strip
+https://libav.org/avconv.html   avconv Documentation
+https://www.binpress.com/tutorial/how-to-generate-video-previews-with-ffmpeg/138
+http://stackoverflow.com/questions/28617047/ffmpeg-using-an-expression-for-tile-filter
+https://ffmpeg.org/ffmpeg-filters.html
+http://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality/556031#556031
+
+avprobe -show_streams "output.mp4" 2> /dev/null | grep nb_frames | head -n1 | sed 's/.*=//'
+
+avconv -nostats -i "output.mp4" -vcodec copy -f rawvideo -y /dev/null 2>&1 | grep frame | awk '{split($0,a,"fps")}END{print a[1]}' | sed 's/.*= *//'
+
+
+
+avconv -loglevel panic -y -i "output.mp4" -frames 1 -q:v 1 -vf "select=not(mod(n\,15)),scale=-1:120,tile=100x1" video_preview.jpg
+avconv  -y -i "output.mp4" -frames 1 -q:v 1 -vf "select=not(mod(n\,15)),scale=-1:120,tile=100x1" video_preview.jpg
+ffmpeg -loglevel panic -y -i "output.mp4" -frames 1 -q:v 1 -vf "select=not(mod(n\,15)),scale=-1:120,tile=100x1" video_preview.jpg
+
+ffmpeg -i "output.mp4" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - video_preview.gif
+ffmpeg -i "output.mp4" -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - gif:- | convert -layers Optimize - video_preview.gif
+ffmpeg -i "output.mp4" -vf "select=not(mod(n\,30)),scale=-1:120" -r 10 -f image2pipe -vcodec ppm - | convert -delay 10 -loop 0 - gif:- | convert -layers Optimize - video_preview.gif
+
+
+http://askubuntu.com/questions/436132/avconv-filter-drawtext-doesnt-work

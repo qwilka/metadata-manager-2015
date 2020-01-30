@@ -1,0 +1,1 @@
+{"version": "0.2.12", "autocommit": false, "index_store_class": "basic", "store_class": "transactional", "indexes": {"metadataDB": {"UUID": {"id": "f409d46f33cd4348928b7431de3c0d9b", "key": "UUID"}}}, "serializer_class": "json", "index_class": "transactional"}

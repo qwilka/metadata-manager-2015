@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="resources">
+    <file>resources/fileopen.png</file>
+    <file>resources/system-shutdown.svg</file>
+  </qresource>
+</RCC>

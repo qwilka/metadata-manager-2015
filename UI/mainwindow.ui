@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>546</width>
+    <height>526</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="centralwidHL">
+    <item>
+     <widget class="QSplitter" name="leftVS">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QToolBox" name="topleftTB">
+       <property name="styleSheet">
+        <string notr="true">#topleftTB{background-color:yellow;}</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page_databases">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>248</width>
+          <height>182</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>databases</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="page_databasesVL">
+         <item>
+          <widget class="QTreeView" name="databasesTV"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_datapackages">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>248</width>
+          <height>182</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>data packages</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QTreeView" name="datapackagesTV"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_sessions">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>248</width>
+          <height>182</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>sessions</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QTreeView" name="sessionsTV"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="botleftW" native="true">
+       <property name="styleSheet">
+        <string notr="true">#botleftW{background-color:green;}</string>
+       </property>
+       <layout class="QVBoxLayout" name="botleftVL">
+        <property name="leftMargin">
+         <number>3</number>
+        </property>
+        <property name="topMargin">
+         <number>3</number>
+        </property>
+        <property name="rightMargin">
+         <number>3</number>
+        </property>
+        <property name="bottomMargin">
+         <number>3</number>
+        </property>
+        <item>
+         <widget class="VnTreeView" name="datatreeTV"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>546</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>Database</string>
+    </property>
+    <addaction name="actionOpen_database"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuMetadata">
+    <property name="title">
+     <string>Metadata</string>
+    </property>
+    <addaction name="actionExtract_metadata"/>
+   </widget>
+   <addaction name="menuDatabase"/>
+   <addaction name="menuMetadata"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="miscDW">
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::RightDockWidgetArea</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="MetadataList" name="metdatalist"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionOpen_database">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/resources/fileopen.png</normaloff>:/resources/resources/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open database</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/resources/system-shutdown.svg</normaloff>:/resources/resources/system-shutdown.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="toolTip">
+    <string>Quit program</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionExtract_metadata">
+   <property name="text">
+    <string>Extract metadata</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>VnTreeView</class>
+   <extends>QTreeView</extends>
+   <header>visinum/tree/views.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MetadataList</class>
+   <extends>QTextBrowser</extends>
+   <header>visinum/tree/metadata_view.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
