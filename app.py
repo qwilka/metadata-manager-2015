@@ -23,7 +23,7 @@ def main():
     app = QApplication(sys.argv)
     app.setApplicationName("Visinum-Metadata")
     app.setOrganizationName("Qwilka")
-    app.setOrganizationDomain("qwilka.com")
+    app.setOrganizationDomain("qwilka.github.io")
     app.setStyle("fusion")  
     mainwindow = MainWindow()
     ##app.mainwindow = mainwindow
