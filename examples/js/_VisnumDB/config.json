@@ -1,1 +1,0 @@
-{"serializer_class": "json", "indexes": {"metadataDB": {"UUID": {"key": "UUID", "id": "91b99d02506048e1a380c08eeaa97031"}}}, "store_class": "transactional", "index_class": "transactional", "index_store_class": "basic", "autocommit": false, "version": "0.2.12"}
