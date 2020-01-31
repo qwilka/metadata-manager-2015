@@ -1,7 +1,7 @@
 # metadata-manager-2015
-This is an old file metadata manager app from ~2015 that uses PyQt.
+This is an old incomplete file metadata manager app from ~2015 that uses PyQt.
 
-Requires Python 3.4+, PyQt, blitzdb
+Requires Python 3.4+, PyQt5, blitzdb
 
 setup.py not available currently
 

@@ -3,3 +3,12 @@
 database
 ========
 https://github.com/adewes/blitzdb
+
+PyQt5 docs tutorials
+======================
+https://www.riverbankcomputing.com/static/Docs/PyQt5/index.html
+https://doc.qt.io/qt-5/index.html
+http://zetcode.com/gui/pyqt5/
+https://pythonspot.com/pyqt5/
+https://www.tutorialspoint.com/pyqt/index.htm
+https://www.youtube.com/view_play_list?p=8B63F2091D787896  PyQT4 MVC tutorial series
